@@ -1,5 +1,15 @@
-Grading at Wed 21 Feb 2024 09:45:01 AM UTC
+Grading at Wed 21 Feb 2024 09:54:48 AM UTC
 Attempting to compile breaker.c 
-The code did not compile!
+gcc -Wall -Wextra -std=c99 breaker.c -o breaker
+testcase1 passed
+#################################################
+testcase2:
+testcase2 passed
+#################################################
+testcase3:
+testcase3 passed
+#################################################
+testcase4:
+testcase4 passed
 
-Overall Grade: F
+Overall Grade: A
