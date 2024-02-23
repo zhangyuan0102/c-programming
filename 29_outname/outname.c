@@ -4,5 +4,9 @@
 #include "outname.h"
 
 char * computeOutputFileName(const char * inputName) {
-  //WRITE ME
+  char * outputName = malloc(strlen(inputName) + 12);
+   strcpy(outputName, inputName);
+  strcat(outputName, ".counts");
+  return outputName;
 }
+
