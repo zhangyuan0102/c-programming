@@ -9,8 +9,8 @@ struct _kvpair_t {
 typedef struct _kvpair_t kvpair_t;
 
 struct _kvarray_t { 
-     kvpair_t *pair_array;
-    size_t size;
+     kvpair_t **pairs;
+     int numPairs;
 };
 typedef struct _kvarray_t kvarray_t;
 
