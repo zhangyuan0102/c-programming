@@ -1,10 +1,45 @@
-Grading at Thu 07 Mar 2024 12:49:11 AM UTC
+Grading at Thu 07 Mar 2024 12:57:42 AM UTC
 Compiling deck.c -> deck.o
+deck.c: In function ‘build_remaining_deck’:
+deck.c:92:37: error: invalid type argument of unary ‘*’ (have ‘deck_t’ {aka ‘struct deck_tag’})
+   92 |     deck_t excluded = malloc(sizeof(*excluded));
+      |                                     ^~~~~~~~~
+deck.c:93:13: error: invalid type argument of ‘->’ (have ‘deck_t’ {aka ‘struct deck_tag’})
+   93 |     excluded->cards = NULL;
+      |             ^~
+deck.c:94:13: error: invalid type argument of ‘->’ (have ‘deck_t’ {aka ‘struct deck_tag’})
+   94 |     excluded->n_cards = 0;
+      |             ^~
+deck.c:103:35: error: ‘deck’ undeclared (first use in this function); did you mean ‘deck_t’?
+  103 |                 if(!deck_contains(deck,*card)){
+      |                                   ^~~~
+      |                                   deck_t
+deck.c:103:35: note: each undeclared identifier is reported only once for each function it appears in
+deck.c:104:31: error: incompatible type for argument 1 of ‘add_card_to’
+  104 |                   add_card_to(excluded, *card);
+      |                               ^~~~~~~~
+      |                               |
+      |                               deck_t {aka struct deck_tag}
+deck.c:58:27: note: expected ‘deck_t *’ {aka ‘struct deck_tag *’} but argument is of type ‘deck_t’ {aka ‘struct deck_tag’}
+   58 | void add_card_to(deck_t * deck, card_t c){
+      |                  ~~~~~~~~~^~~~
+deck.c:109:35: error: incompatible type for argument 1 of ‘make_deck_exclude’
+  109 |     deck_t *d = make_deck_exclude(excluded);
+      |                                   ^~~~~~~~
+      |                                   |
+      |                                   deck_t {aka struct deck_tag}
+deck.c:79:37: note: expected ‘deck_t *’ {aka ‘struct deck_tag *’} but argument is of type ‘deck_t’ {aka ‘struct deck_tag’}
+   79 | deck_t * make_deck_exclude(deck_t * excluded_cards){
+      |                            ~~~~~~~~~^~~~~~~~~~~~~~
+deck.c:110:15: error: incompatible type for argument 1 of ‘free_deck’
+  110 |     free_deck(excluded);
+      |               ^~~~~~~~
+      |               |
+      |               deck_t {aka struct deck_tag}
 In file included from deck.c:4:
-deck.h:4:10: fatal error: cards.h: No such file or directory
-    4 | #include "cards.h"
-      |          ^~~~~~~~~
-compilation terminated.
+deck.h:19:25: note: expected ‘deck_t *’ {aka ‘struct deck_tag *’} but argument is of type ‘deck_t’ {aka ‘struct deck_tag’}
+   19 | void free_deck(deck_t * deck) ;
+      |                ~~~~~~~~~^~~~
 Compilation of deck.c failed
 
 Overall Grade: F
