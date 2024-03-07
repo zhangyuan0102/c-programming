@@ -259,19 +259,31 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 //other functions we have provided can make
 //use of get_match_counts.
 unsigned * get_match_counts(deck_t * hand) {
-  unsigned * count=malloc(hand->n_cards * sizeof(unsigned));
-  for(int i=0;i<hand->n_cards;i++){
-  if(hand->cards[i-1]->value != hand->cards[i]->value||i<1){
-    count[i]=1;
-  }
-  else{
-      count[i]=count[i-1];
-    for(int j=0;j<count[i-1]+1;j++){
-      count[i-j]++;
+  unsigned * elems=malloc(sizeof(* elems)*hand->n_cards);
+  size_t num = hand->n_cards;
+   for (int i=0; i< num; i++){
+    elems[i]=0;
+   }
+  
+  for (int i=0; i< num; i++){
+    if (elems[i]<1){
+      unsigned count=1;
+    for (int x=0; x<num; x++){
+	if (x==i) continue;
+	if (hand->cards[i]->value==hand->cards[x]->value){
+	  count++;
+	}
+      }
+      elems[i]=count;
+      for (int x=0; x<num; x++){
+	if (x==i) continue;
+	if (hand->cards[i]->value==hand->cards[x]->value){
+	  elems[x]=count;
+	}
+      }
     }
   }
-}
-return count;
+  return elems;
 }
 // We provide the below functions.  You do NOT need to modify them
 // In fact, you should not modify them!
