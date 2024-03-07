@@ -261,10 +261,10 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 unsigned * get_match_counts(deck_t * hand) {
   unsigned * count=malloc(hand->n_cards * sizeof(unsigned));
   for(int i=0;i<hand->n_cards;i++){
-  if(hand->cards[i-1] != hand->cards[i]||i<1){
+  if(hand->cards[i-1]->value != hand->cards[i]->value||i<1){
     count[i]=1;
   }
-  else if(hand->cards[i-1] == hand->cards[i]){
+  else{
       count[i]=count[i-1];
     for(int j=0;j<count[i-1]+1;j++){
       count[i-j]++;
