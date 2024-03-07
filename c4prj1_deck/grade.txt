@@ -1,0 +1,10 @@
+Grading at Thu 07 Mar 2024 12:49:11 AM UTC
+Compiling deck.c -> deck.o
+In file included from deck.c:4:
+deck.h:4:10: fatal error: cards.h: No such file or directory
+    4 | #include "cards.h"
+      |          ^~~~~~~~~
+compilation terminated.
+Compilation of deck.c failed
+
+Overall Grade: F
