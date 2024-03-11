@@ -23,6 +23,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
                 add_card_to(hand, card_from_letters(value, suit));
             }
         }
+    }
     if(hand->n_cards<5){
         fprintf(stderr, "Each hand should have at least 5 cards.\n");
         exit(EXIT_FAILURE);
