@@ -1,22 +1,13 @@
-Grading at Mon 11 Mar 2024 03:01:41 AM UTC
+Grading at Mon 11 Mar 2024 03:05:44 AM UTC
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
-input.c: In function ‘hand_from_string’:
-input.c:33:1: error: ISO C forbids nested functions [-Werror=pedantic]
-   33 | deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
-      | ^~~~~~
-input.c:51:1: error: expected declaration or statement at end of input
-   51 | }
-      | ^
-input.c:51: error: control reaches end of non-void function [-Werror=return-type]
-   51 | }
-      | 
-At top level:
-input.c:33:11: error: ‘read_input’ defined but not used [-Werror=unused-function]
-   33 | deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
-      |           ^~~~~~~~~~
-cc1: all warnings being treated as errors
-Compilation of input.c failed
+Compiling future.c -> future.o
+future.c: In function ‘add_future_card’:
+future.c:10:8: error: ‘future_cards_t’ {aka ‘struct future_cards_tag’} has no member named ‘deck’; did you mean ‘decks’?
+   10 |    fc->deck[i].n_cards = 0 ;
+      |        ^~~~
+      |        decks
+Compilation of future.c failed
 
 Overall Grade: F
