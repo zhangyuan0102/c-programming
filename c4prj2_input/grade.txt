@@ -1,0 +1,12 @@
+Grading at Mon 11 Mar 2024 02:13:59 AM UTC
+Compiling cards.c -> cards.o
+Compiling deck.c -> deck.o
+Compiling input.c -> input.o
+input.c: In function ‘read_input’:
+input.c:36:9: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   36 |   while(num = getline(&line, &sz, f)!=-1){
+      |         ^~~
+cc1: all warnings being treated as errors
+Compilation of input.c failed
+
+Overall Grade: F
