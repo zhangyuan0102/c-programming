@@ -33,7 +33,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
    size_t sz=0;
   char *line = NULL;
 
-  while(num = getline(&line, &sz, f)!=-1){
+  while((num = getline(&line, &sz, f))!=-1){
 
   line[num-1] = '\0';
   
