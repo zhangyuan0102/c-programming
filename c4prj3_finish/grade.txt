@@ -1,0 +1,17 @@
+Grading at Thu 14 Mar 2024 10:54:18 PM UTC
+Running 'make clean' to do a clean build of your project
+rm -rf *.o poker *~
+Running 'make poker OTHERFLAGS=-O3' to build your project
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o cards.o cards.c
+In file included from /usr/include/string.h:495,
+                 from cards.c:5:
+In function ‘strcpy’,
+    inlined from ‘ranking_to_string’ at cards.c:34:13:
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:90:10: error: ‘__builtin___memcpy_chk’ writing 16 bytes into a region of size 15 overflows the destination [-Werror=stringop-overflow=]
+   90 |   return __builtin___strcpy_chk (__dest, __src, __bos (__dest));
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+make: *** [<builtin>: cards.o] Error 1
+make failed
+
+Overall Grade: F
